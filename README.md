@@ -15,3 +15,5 @@ Order Model:
 The Order model represents the purchases made by users. Each order is associated with a user and contains one or more products. It also stores information such as the date of the order, whether the order is complete, and a transaction ID. This model is crucial for handling the buying process and keeping track of what users have purchased.
 
 These models interact with each other to handle the main functionalities of our e-commerce store. The User model is connected to the Order model, as each order must be associated with a user. The Order model is also linked to the Product model, as each order contains one or more products. These connections between models are made using Django's foreign key functionality, allowing us to create complex relationships between data.
+
+
