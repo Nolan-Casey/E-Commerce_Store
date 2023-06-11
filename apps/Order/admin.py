@@ -5,17 +5,19 @@ from .models import Address
 from .models import Payment
 
 
-class OrderAdmin(admin.OrderAdmin):
-    list_display = ("data_order", "complete", "transaction_id")
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('data_order', 'complete', 'transaction_id')
+    search_fields = ('transaction_id',)
     
-class OrderTypeAdmin(admin.OrderTypeAdmin):
-    list_display = ("quantity", "data_added")
+class OrderTypeAdmin(admin.ModelAdmin):
+    list_display = ('date_added',)
     
-class AddressAdmin(admin.AddressAdmin):
-    list_display = ("street", "city", "state")
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ('street', 'city', 'state')
+   
  
-class PaymentAdmin(admin.PaymentAdmin):
-    list_display = ("amount", "date")   
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ('amount', 'date') 
 
 # Register your models here.
 admin.site.register(Order, OrderAdmin)
